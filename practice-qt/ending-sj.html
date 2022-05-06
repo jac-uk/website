@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <title>Practice Qualifying Test</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="anchor"></div>
+  <div class="page-container">
+    <div class="govuk-width-container" style="padding-top: 0px;">
+      <main>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Test Submitted
+              </h1>
+              <div class="govuk-panel__body">
+                Your test has been submitted and is now complete.
+              </div>
+            </div>
+
+            <p class="govuk-body-m">You got <span class="score">0</span>% of questions correct.</p>
+
+            <div class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-6">
+              Next Steps
+            </div>
+            <div class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-6">
+              <p class="govuk-body"> You have another online test to complete: </p>
+              <div class="govuk-inset-text">
+                <ul class="govuk-list">
+                  <li>
+                    <a id="btn-starting" href="./starting-ca.html" class=""> Practice qualifying test part 2 - Critical Analysis Questions </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script>
+    updateScoreHTML();
+
+    let btnStarting = document.querySelector('#btn-starting');
+    
+    function handleStartingClick() {
+      var width = window.outerWidth;
+      var height = window.outerHeight;
+      window.open('./assets/lecture.pdf', '', 'height=' + height + ',width=' + (width / 2) + ',top=0,left=' + (width / 2));
+    }
+
+    btnStarting.addEventListener('click', handleStartingClick);
+
+  </script>
+</body>
+
+</html>

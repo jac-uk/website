@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <title>Practice Qualifying Test</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="anchor"></div>
+  <div class="page-container">
+    <div class="govuk-width-container">
+      <main>
+        <h1 class="govuk-heading-xl">Practice Qualifying Test</h1>
+
+        <div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Diversity data
+                </h1>
+              </legend>
+              <div id="dob-hint" class="govuk-hint">
+                We are gathering some information for diversity monitoring purposes, to help us better tailor our approaches and support candidates from a range of backgrounds’.
+                This information will not be used to identify anyone taking the test, and is purely for monitoring purposes.
+                Please tick if you are from any of these groups which have been identified as underrepresented in the judiciary.
+              </div>
+              <div id="dob-hint" class="govuk-hint">
+                Please tick all that apply
+              </div>
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="ethnicity-female" name="ethnicity" type="checkbox"
+                    value="Female">
+                  <label class="govuk-label govuk-checkboxes__label" for="ethnicity-female">
+                    Female
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="ethnicity-black-asian-minority-ethnic" name="ethnicity"
+                    type="checkbox" value="Black, Asian or Minority Ethnic">
+                  <label class="govuk-label govuk-checkboxes__label" for="ethnicity-black-asian-minority-ethnic">
+                    Black, Asian or Minority Ethnic
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="ethnicity-non-barrister" name="ethnicity" type="checkbox"
+                    value="Non-barrister">
+                  <label class="govuk-label govuk-checkboxes__label" for="ethnicity-non-barrister">
+                    Non-barrister
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="ethnicity-disabled" name="ethnicity" type="checkbox"
+                    value="Disabled">
+                  <label class="govuk-label govuk-checkboxes__label" for="ethnicity-disabled">
+                    Disabled
+                  </label>
+                </div>
+              </div>
+              <br>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ethnicity-none" name="ethnicity" type="radio"
+                  value="None">
+                <label class="govuk-label govuk-radios__label" for="ethnicity-none">
+                  None
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ethnicity-prefer-not-to-say" name="ethnicity" type="radio"
+                  value="Prefer not to say">
+                <label class="govuk-label govuk-radios__label" for="ethnicity-none">
+                  Prefer not to say
+                </label>
+              </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button disabled id="btn-continue" href="./starting-sj.html" type="button"
+          class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start"
+          data-module="govuk-button">
+          Continue
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+            viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </button>
+      </main>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script>
+    ; (function () {
+      let $checkboxes = document.querySelectorAll('.govuk-checkboxes input');
+      let $radioNone = document.querySelector('#ethnicity-none');
+      let $radioPreferNotToSay = document.querySelector('#ethnicity-prefer-not-to-say');
+      let $btnContinue = document.querySelector('#btn-continue');
+
+      let checkboxValues = [];
+      let radioValue = null;
+
+      function handleCheckboxChange(e) {
+        if (e.target.value) {
+          checkedValue = e.target.value;
+        }
+
+        let values = [];
+        $checkboxes.forEach($checkbox => {
+          if ($checkbox.checked) {
+            values.push($checkbox.value);
+          }
+        });
+        checkboxValues = values;
+
+        // clear radio if checkbox is checked
+        if (values.length) {
+          $radioNone.checked = false;
+          $radioPreferNotToSay.checked = false;
+          radioValue = null;
+          $btnContinue.removeAttribute('disabled');
+        } else {
+          $btnContinue.setAttribute('disabled', true);
+        }
+      }
+
+      function handleRadioChange(e) {
+        if (e.target.checked) {
+          radioValue = e.target.value;
+          $checkboxes.forEach($checkbox => {
+            $checkbox.checked = false
+          });
+          checkboxValues = [];
+          $btnContinue.removeAttribute('disabled');
+        } else {
+          radioValue = null;
+        }
+      }
+
+      function handleContinueClick() {
+        if (!checkboxValues.length && !radioValue) return;
+
+        // send data to Google spreadsheet
+        let url = 'https://script.google.com/macros/s/AKfycbxSkSUnHGdIoewMTsXRRowzSwvMqHpudYemKl_6lP1H77wAbUE/exec';
+
+        let datetime = getFormattedDate(new Date());
+        let ethnicity = ''
+        if (checkboxValues.length) {
+          ethnicity += checkboxValues.join(',');
+        } else if (radioValue) {
+          ethnicity += radioValue;
+        }
+        let data = [
+          { key: 'datetime', value: datetime },
+          { key: 'ethnicity', value: ethnicity }
+        ];
+        url += data.reduce((prev, cur) => `${prev}&${cur.key}=${cur.value}`, '?');
+
+        fetch(url)
+          .then(res => res.text())
+          .then(text => {
+            // clear checkboxes and radio
+            $checkboxes.forEach($checkbox => {
+              $checkbox.checked = false
+            });
+            $radioNone.checked = false;
+            $radioPreferNotToSay.checked = false;
+
+            window.location.href = './starting-sj.html';
+          });
+      }
+
+      $checkboxes.forEach($checkbox => {
+        $checkbox.addEventListener('change', handleCheckboxChange);
+      });
+      $radioNone.addEventListener('change', handleRadioChange);
+      $radioPreferNotToSay.addEventListener('change', handleRadioChange);
+      $btnContinue.addEventListener('click', handleContinueClick);
+    }());
+  </script>
+</body>
+
+</html>

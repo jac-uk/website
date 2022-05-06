@@ -1,0 +1,216 @@
+[
+  {
+    "type": "situational-judgement",
+    "introduction": "Practice qualifying test part 1 – Situational Judgement Questions",
+    "time": 10,
+    "questions": [
+      {
+        "details": "You are due to start a hearing on the fourth floor of a tribunal building at 10am. There are no hearing rooms on the first or ground floors. The claimant is unrepresented. She is physically disabled and has difficulty walking. The case is urgent and has already been adjourned because of the claimant’s health problems. You are told that the lifts are broken and the claimant says that she will have to climb the stairs on her knees. However, you are told the lifts will be repaired by 2pm.",
+        "options": [
+          {
+            "answer": "Have the hearing moved to a large storage room not designed for hearings on the ground floor despite it having no natural light."
+          },
+          {
+            "answer": "Direct that the case be postponed until 2pm with the risk of going part-heard."
+          },
+          {
+            "answer": "Adjourn the hearing to a future date."
+          },
+          {
+            "answer": "Direct that the case be transferred immediately to another tribunal building for hearing today."
+          },
+          {
+            "answer": "Direct the staff to find a wheelchair and to bring her up the stairs to the 4th floor in it."
+          }
+        ],
+        "mostAppropriate": 0,
+        "leastAppropriate": 4
+      },
+      {
+        "details": "You are dealing with a hearing where you need to balance the public interest in holding a public hearing with protecting the identity of a vulnerable party. Whilst you are dealing with the matter, a journalist asks whether he can make representations before you make your decision.",
+        "options": [
+          {
+            "answer": "Request the journalist to sit down and remain silent."
+          },
+          {
+            "answer": "Adjourn the hearing for the journalist to seek legal advice and representation."
+          },
+          {
+            "answer": "Listen to what the journalist wants to say before consulting the parties."
+          },
+          {
+            "answer": "Ask the parties’ representatives whether they agree the journalist can make representations."
+          },
+          {
+            "answer": "Ask the journalist to leave."
+          }
+        ],
+        "mostAppropriate": 2,
+        "leastAppropriate": 4
+      },
+      {
+        "details": "You are the only judge sitting in your court and you are dealing with a very heavy mixed list of cases. There is an urgent application with a time estimate of one hour before you. You see from the file that both parties have filed evidence in accordance with the court’s directions. You have never previously dealt with an application of this nature and you do not feel confident about it even though you have jurisdiction to hear it.",
+        "options": [
+          {
+            "answer": "Adjourn it to be heard by another judge on the next available date."
+          },
+          {
+            "answer": "Hear the application."
+          },
+          {
+            "answer": "Transfer the application to another court where you are aware that there is a resident judge who is expert in such applications."
+          },
+          {
+            "answer": "Explain to the legal representatives and the parties that you have never dealt with such an application before and that, in the circumstances, they wish may wish to seek an adjournment."
+          },
+          {
+            "answer": "Adjourn for 15 minutes whilst you try to telephone a more senior judge for advice."
+          }
+        ],
+        "mostAppropriate": 1,
+        "leastAppropriate": 3
+      },
+      {
+        "details": "You call the parties into court in relation to an application which has been listed for three hours. Both parties are self-representing. One of the parties makes an application to adjourn the hearing. You hear from both parties and refuse the application. Before you can explain the reason for your decision, the party who applied for the adjournment leaves the court room, telling you that you are biased and that he does not want to participate further in the hearing.",
+        "options": [
+          {
+            "answer": "Proceed with the hearing in the party’s absence."
+          },
+          {
+            "answer": "Telephone security and ask them to intercept the party and to ask him to return to the court room."
+          },
+          {
+            "answer": "Proceed with the hearing in his absence, but only after giving full reasons for your decision to refuse the adjournment request."
+          },
+          {
+            "answer": "Adjourn the hearing to enable the party who has left to attend on another occasion, after they have had an opportunity to reflect on decision."
+          },
+          {
+            "answer": "Leave the hearing part-heard and relist it to allow you to get the party back and explain your decision."
+          }
+        ],
+        "mostAppropriate": 2,
+        "leastAppropriate": 4
+      },
+      {
+        "details": "You arrive at court to find you have a very congested list. Your first case is an application of 30 minutes duration. You review the papers and find that you have detailed written arguments from both parties’ representatives. You consider that 30 minutes is a wholly inadequate time estimate. You call the parties and their representatives into court.",
+        "options": [
+          {
+            "answer": "Refuse to hear the parties and dismiss the application because the time estimate is self-evidently insufficient."
+          },
+          {
+            "answer": "Refuse to hear the parties and adjourn the application to another day."
+          },
+          {
+            "answer": "Start to hear the application and see what progress can be made. If other cases are moved back, you can always work over lunch to accommodate them."
+          },
+          {
+            "answer": "Seek submissions from the legal representatives to establish whether it might be possible for you to determine the matter within the time estimate."
+          },
+          {
+            "answer": "Stand down the case to see if a colleague has time to do it in their list."
+          }
+        ],
+        "mostAppropriate": 3,
+        "leastAppropriate": 0
+      }
+    ]
+  },
+  {
+    "type": "critical-analysis",
+    "introduction": "Practice qualifying test part 2 - Critical Analysis Questions",
+    "time": 10,
+    "questions": [
+      {
+        "details": "According to Lord Justice Laws, common law’s catholicity is under threat from…",
+        "options": [
+          {
+            "answer": "The decisions of the Strasbourg court"
+          },
+          {
+            "answer": "The effects of European Law"
+          },
+          {
+            "answer": "The perceived effects of EU law and human rights law"
+          },
+          {
+            "answer": "Law of human rights"
+          }
+        ],
+        "correct": 2
+      },
+      {
+        "details": "Based on Lord Justice Laws lecture, what best describes catholicity of the common law.",
+        "options": [
+          {
+            "answer": "Restraint of the common law"
+          },
+          {
+            "answer": "Openness to incorporating concepts from different sources"
+          },
+          {
+            "answer": "Freedom of thought, conscience and religion"
+          },
+          {
+            "answer": "Historic autonomy and power of judgment of the courts"
+          }
+        ],
+        "correct": 1
+      },
+      {
+        "details": "What is particular to a “constitutional” statute?",
+        "options": [
+          {
+            "answer": "It cannot in practice be repealed"
+          },
+          {
+            "answer": "It may not be impliedly repealed"
+          },
+          {
+            "answer": "It is given force by the European Communities Act"
+          },
+          {
+            "answer": "It is expressed in very general terms"
+          }
+        ],
+        "correct": 1
+      },
+      {
+        "details": "According to Lord Justice Laws, what is one of the benefits of the common law?",
+        "options": [
+          {
+            "answer": "It is able to adapt and take in different viewpoints over time, both from within and from external sources"
+          },
+          {
+            "answer": "It shows a state has its own sovereignty"
+          },
+          {
+            "answer": "That common law is eroded by further development from other sources"
+          },
+          {
+            "answer": "Interpretation of common law is complex and requires careful consideration to reach the correct result"
+          }
+        ],
+        "correct": 0
+      },
+      {
+        "details": "Lord Justice Laws views on the primacy of Strasbourg case law differ to Lord Bingham in which way…",
+        "options": [
+          {
+            "answer": "There is no single correct interpretation of the European convention on human rights"
+          },
+          {
+            "answer": "Sticking close to Strasburg allows us to develop UK human Rights Law autonomously"
+          },
+          {
+            "answer": "A national court needs a strong reason to dilute or weaken the effect of Strasburg case law."
+          },
+          {
+            "answer": "Close adherence to Strasburg case law undermines the sovereignty of parliament"
+          }
+        ],
+        "correct": 0
+      }
+    ]
+  }
+]

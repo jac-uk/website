@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <title>Practice Qualifying Test</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="anchor"></div>
+  <div class="page-container">
+    <div class="govuk-width-container">
+      <main>
+        <h1 class="govuk-heading-xl">Practice Qualifying Test</h1>
+
+        <div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Before you start the tests, we recommend the following:
+                </h1>
+              </legend>
+              <div class="govuk-hint">
+              </div>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>You use a tablet, laptop or desktop computer with an active and/or stable internet connection and a
+                  web browser.</li>
+                <li>You perform any software updates or upgrades.</li>
+                <li>You have a copy of these instructions to hand as they will not be available on screen after you
+                  begin the test.</li>
+                <li>You should use Google Chrome, Firefox, Microsoft Edge or Safari browsers.</li>
+                <li>You should not use Internet Explorer as this does not support the test.</li>
+                <li>You should not take a test on a mobile phone as you may not be able to see everything clearly.</li>
+                <li>You should not use a government device as this may reduce the functionality of the test.</li>
+                <li>Some work devices may not provide full functionality of the test.</li>
+                <li>Once you start the test do not press the back button on your browser at any time.</li>
+                <li>You can move between the pages of the test by clicking on the previous and next buttons at the
+                  bottom
+                  of the test screen.</li>
+              </ul>
+          </div>
+          </fieldset>
+        </div>
+
+        <button id="btn-continue" type="button"
+          class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start"
+          data-module="govuk-button">
+          Continue
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+            viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </button>
+      </main>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script>
+    ; (function () {
+      let $btnContinue = document.querySelector('#btn-continue');
+
+      function handleContinueClick() {
+        window.location.href = './ethnicity.html';
+      }
+
+      $btnContinue.addEventListener('click', handleContinueClick);
+    }());
+  </script>
+</body>
+
+</html>
