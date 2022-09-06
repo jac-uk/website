@@ -61,7 +61,7 @@
             "answer": "Transfer the application to another court where you are aware that there is a resident judge who is expert in such applications."
           },
           {
-            "answer": "Explain to the legal representatives and the parties that you have never dealt with such an application before and that, in the circumstances, they wish may wish to seek an adjournment."
+            "answer": "Explain to the legal representatives and the parties that you have never dealt with such an application before and that, in the circumstances, they may wish to seek an adjournment."
           },
           {
             "answer": "Adjourn for 15 minutes whilst you try to telephone a more senior judge for advice."
@@ -71,19 +71,19 @@
         "leastAppropriate": 3
       },
       {
-        "details": "You call the parties into court in relation to an application which has been listed for three hours. Both parties are self-representing. One of the parties makes an application to adjourn the hearing. You hear from both parties and refuse the application. Before you can explain the reason for your decision, the party who applied for the adjournment leaves the court room, telling you that you are biased and that he does not want to participate further in the hearing.",
+        "details": "You call the parties into court in relation to an application which has been listed for three hours. Both parties are self-representing. One of the parties makes an application to adjourn the hearing. You hear from both parties and refuse the application. Before you can explain the reason for your decision, the party who applied for the adjournment leaves the court room, telling you that you are biased and that they do not want to participate further in the hearing.",
         "options": [
           {
             "answer": "Proceed with the hearing in the party’s absence."
           },
           {
-            "answer": "Telephone security and ask them to intercept the party and to ask him to return to the court room."
+            "answer": "Telephone security and ask them to intercept the party and to ask them to return to the court room."
           },
           {
-            "answer": "Proceed with the hearing in his absence, but only after giving full reasons for your decision to refuse the adjournment request."
+            "answer": "Proceed with the hearing in their absence, but only after giving full reasons for your decision to refuse the adjournment request."
           },
           {
-            "answer": "Adjourn the hearing to enable the party who has left to attend on another occasion, after they have had an opportunity to reflect on decision."
+            "answer": "Adjourn the hearing to enable the party who has left to attend on another occasion, after they have had an opportunity to reflect on the decision."
           },
           {
             "answer": "Leave the hearing part-heard and relist it to allow you to get the party back and explain your decision."
