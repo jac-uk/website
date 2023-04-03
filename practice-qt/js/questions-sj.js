@@ -331,13 +331,15 @@
     questions.forEach((question, index) => {
       let answer = answers[index];
       if (!answer) return;
-      if (question.mostAppropriate.toString() === answer.mostAppropriate.toString()
-      && question.leastAppropriate.toString() === answer.leastAppropriate.toString()) {
+      if (question.mostAppropriate.toString() === answer.mostAppropriate.toString()) {
+        count += 1;
+      }
+      if (question.leastAppropriate.toString() === answer.leastAppropriate.toString()) {
         count += 1;
       }
     });
 
-    return Math.round((count * 100) / questions.length);
+    return Math.round((count * 100) / (questions.length * 2));
   }
 
   function handleSkipClick(e) {
