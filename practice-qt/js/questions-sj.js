@@ -16,7 +16,8 @@
   let $btnListHint = document.querySelector('.btn-list-hint');
   let $btnSkip = document.querySelector('#btn-skip');
   let $btnNext = document.querySelector('#btn-next');
-  let $btnPrev = document.querySelector('#previous-link');
+  let $prevLink = document.querySelector('#previous-link');
+  let $nextLink = document.querySelector('#next-link');
   let $modalSubmit = document.querySelector('.modal-submit');
   let $modalSubmitSuccess = $modalSubmit.querySelector('.govuk-button--success');
   let $modalSubmitCancel = $modalSubmit.querySelector('.deny');
@@ -264,7 +265,8 @@
     if (isLastQuestion(index)) {
       $btnListHint.style.display = 'none';
       $btnSkip.style.display = 'none';
-      $btnPrev.style.display = 'none';
+      $prevLink.style.display = 'none';
+      $nextLink.style.display = 'none';
       $btnNext.innerHTML = "Submit answers";
       $btnNext.disabled = false;
     } else {
@@ -272,7 +274,8 @@
       $btnListHint.style.display = 'block';
       $btnSkip.style.display = 'inline';
       $btnNext.innerHTML = "Save and continue";
-      $btnPrev.style.display = (currentQuestionIndex === 0) ? 'none' : 'block';
+      $prevLink.style.display = (currentQuestionIndex === 0) ? 'none' : 'block';
+      $nextLink.style.display = (currentQuestionIndex === $questions.length - 1) ? 'none' : 'block';
 
       // disable next button when no input is checked
       let checked = $questions[currentQuestionIndex].querySelector('input:checked');
@@ -343,6 +346,7 @@
   }
 
   function handleSkipClick(e) {
+    e.preventDefault();
     $questions[currentQuestionIndex].querySelectorAll('input').forEach($answer => {
       $answer.checked = false;
     });
@@ -375,7 +379,8 @@
     window.location.href = `${endingPagePath}?score=${score}`;
   }
   
-  $btnPrev.addEventListener('click', handlePrevClick);
+  $prevLink.addEventListener('click', handlePrevClick);
+  $nextLink.addEventListener('click', handleSkipClick);
   $btnSkip.addEventListener('click', handleSkipClick);
   $btnNext.addEventListener('click', handleNextClick);
   // modal buttons
