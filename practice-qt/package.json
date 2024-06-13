@@ -1,0 +1,17 @@
+{
+  "name": "practice-qt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "firebase deploy --only hosting:develop-practice-qt-app",
+    "develop:deploy": "firebase deploy --only hosting:develop-practice-qt-app",
+    "live:deploy": "firebase deploy --only hosting:live-practice-qt-app"
+  },
+  "dependencies": {
+    "firebase-tools": "^13.11.2"
+  },
+  "engines": {
+    "node": "v20.10.0",
+    "npm": "10.2.3"
+  }
+}

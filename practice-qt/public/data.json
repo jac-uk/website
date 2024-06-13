@@ -5,26 +5,26 @@
     "time": 10,
     "questions": [
       {
-        "details": "You are due to start a hearing on the fourth floor of a tribunal building at 10am. There are no hearing rooms on the first or ground floors. The claimant is unrepresented. She is physically disabled and has difficulty walking. The case is urgent and has already been adjourned because of the claimant’s health problems. You are told that the lifts are broken and the claimant says that she will have to climb the stairs on her knees. However, you are told the lifts will be repaired by 2pm.",
+        "details": "You are conducting a hearing. The witness who is giving evidence has a very strong regional accent, not local to the area where the hearing is taking place. You notice that others in the hearing room, including the parties, appear to be having some difficulty in understanding the evidence.",
         "options": [
           {
-            "answer": "Have the hearing moved to a large storage room not designed for hearings on the ground floor despite it having no natural light."
+            "answer": "Interrupt the evidence, tell the witness politely that his accent is difficult to understand, ask him to speak more slowly and tell him you will check with him that you have correctly noted his responses."
           },
           {
-            "answer": "Direct that the case be postponed until 2pm with the risk of going part-heard."
+            "answer": "Interrupt the evidence and ask everyone in the hearing room to raise their hand if they are finding the witness hard to understand."
           },
           {
-            "answer": "Adjourn the hearing to a future date."
+            "answer": "Interrupt the evidence, invite the advocates into your chambers, and discuss the issue with them."
           },
           {
-            "answer": "Direct that the case be transferred immediately to another tribunal building for hearing today."
+            "answer": "Do nothing, on the basis that it is for the advocate to present their case, not for you to help them out."
           },
           {
-            "answer": "Direct the staff to find a wheelchair and to bring her up the stairs to the 4th floor in it."
+            "answer": "Summarise the points after the witness has stopped speaking."
           }
         ],
         "mostAppropriate": 0,
-        "leastAppropriate": 4
+        "leastAppropriate": 3
       },
       {
         "details": "You are dealing with a hearing where you need to balance the public interest in holding a public hearing with protecting the identity of a vulnerable party. Whilst you are dealing with the matter, a journalist asks whether he can make representations before you make your decision.",
@@ -49,26 +49,26 @@
         "leastAppropriate": 4
       },
       {
-        "details": "You are the only judge sitting in your court and you are dealing with a very heavy mixed list of cases. There is an urgent application with a time estimate of one hour before you. You see from the file that both parties have filed evidence in accordance with the court’s directions. You have never previously dealt with an application of this nature and you do not feel confident about it even though you have jurisdiction to hear it.",
+        "details": "You are conducting a hearing in a room where the layout means you and the parties face each other across a table. The room is small, so the clerk is located opposite you, behind the parties. The claimant has provided some medical evidence related to issues he has with anxiety; your review of the paperwork suggests that the claimant might be exaggerating his anxiety, but you are not certain of this. As soon as the claimant enters the room and realises where the clerk will be sitting, he objects and states that someone sitting behind him will cause him stress.",
         "options": [
           {
-            "answer": "Adjourn it to be heard by another judge on the next available date."
+            "answer": "Ask the claimant if you could start the hearing and see if he forgets about the clerk sitting behind him."
           },
           {
-            "answer": "Hear the application."
+            "answer": "Offer to check if there are any other rooms where the hearing could be moved to, explaining this may cause a delay for all concerned."
           },
           {
-            "answer": "Transfer the application to another court where you are aware that there is a resident judge who is expert in such applications."
+            "answer": "Offer to adjourn the case so it can be re-listed in a different room."
           },
           {
-            "answer": "Explain to the legal representatives and the parties that you have never dealt with such an application before and that, in the circumstances, they may wish to seek an adjournment."
+            "answer": "Ask the claimant if he could identify where in the room the clerk could sit that would make him feel less anxious."
           },
           {
-            "answer": "Adjourn for 15 minutes whilst you try to telephone a more senior judge for advice."
+            "answer": "Advise the claimant that he will need to focus all his attention on the proceedings so will soon forget about the clerk."
           }
         ],
-        "mostAppropriate": 1,
-        "leastAppropriate": 3
+        "mostAppropriate": 3,
+        "leastAppropriate": 4
       },
       {
         "details": "You call the parties into court in relation to an application which has been listed for three hours. Both parties are self-representing. One of the parties makes an application to adjourn the hearing. You hear from both parties and refuse the application. Before you can explain the reason for your decision, the party who applied for the adjournment leaves the court room, telling you that you are biased and that they do not want to participate further in the hearing.",

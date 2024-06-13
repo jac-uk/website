@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "develop": "jac-qualifying-tests-develop",
+    "live": "jac-qualifying-tests-live",
+    "default": "jac-qualifying-tests-develop"
+  },
+  "targets": {
+    "jac-qualifying-tests-develop": {
+      "hosting": {
+        "develop-practice-qt-app": [
+          "jac-practice-qt-develop"
+        ]
+      }
+    },
+    "jac-qualifying-tests-live": {
+      "hosting": {
+        "live-practice-qt-app": [
+          "jac-practice-qt-live"
+        ]
+      }
+    }
+  }
+}

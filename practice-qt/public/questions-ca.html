@@ -16,12 +16,17 @@
     <div class="countdown">
       <div class="govuk-!-padding-2">
         <div class="previous-link-container">
-          <a id="previous-link" href="" class="govuk-link countdown-link">
-            ❮ Previous Question 
+          <a id="previous-link" href="" class="govuk-link previous-link">
+            ❮ Previous question 
           </a>
         </div>
         <div class="text-center">
           Time remaining: <span id="time-remaining"></span>
+        </div>
+        <div class="next-link-container">
+          <a id="next-link" href="" class="govuk-link next-link">
+            Skip to the next question ❯
+          </a>
         </div>
       </div>
     </div>
@@ -31,12 +36,6 @@
         <div class="question-content"></div>
 
         <div class="summary-content"></div>
-
-        <div class="btn-list-hint">
-          <p class="govuk-hint"> Please select one option 'Most appropriate' and one 'Least appropriate' before
-            clicking on 'Save and continue'.
-          </p>
-        </div>
 
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper button-list">
@@ -61,7 +60,7 @@
           </div>
           <div class="modal__content govuk-!-padding-4">
             <p class="modal__message govuk-body-l">
-              Are you sure you want to submit your answers? This will end the situational judgement test.
+              Are you sure you want to submit your answers? This will end the test.
             </p>
             <span>
               <button class="govuk-button govuk-button--secondary govuk-!-margin-right-3 deny info-btn--modal--cancel">
@@ -117,7 +116,7 @@
   </div>
 
   <script src="./js/index.js"></script>
-  <script src="./js/questions-sj.js"></script>
+  <script src="./js/questions-ca.js"></script>
 </body>
 
 </html>

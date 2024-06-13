@@ -1,8 +1,8 @@
-;(function () {
-  const endingPagePath = './ending-sj.html';
-
+;(function () {  
+  const endingPagePath = './ending-ca.html';
+  
   let tests = [];
-  let currentTestIndex = 0;
+  let currentTestIndex = 1;
   let currentQuestionIndex = 0;
   let testSummaries = [];
   let isBackSummary = false;
@@ -13,10 +13,10 @@
   let $buttonList = document.querySelector('.button-list');
   let $questions = [];
   let $editQuestions = [];
-  let $btnListHint = document.querySelector('.btn-list-hint');
   let $btnSkip = document.querySelector('#btn-skip');
   let $btnNext = document.querySelector('#btn-next');
-  let $btnPrev = document.querySelector('#previous-link');
+  let $prevLink = document.querySelector('#previous-link');
+  let $nextLink = document.querySelector('#next-link');
   let $modalSubmit = document.querySelector('.modal-submit');
   let $modalSubmitSuccess = $modalSubmit.querySelector('.govuk-button--success');
   let $modalSubmitCancel = $modalSubmit.querySelector('.deny');
@@ -35,19 +35,17 @@
         if (data.length) {
           tests = data;
           testSummaries = tests.map(() => []);
-          currentTestIndex = 0;
+          currentTestIndex = 1;
           currentQuestionIndex = 0;
           setCountdown(tests[currentTestIndex].time);
 
-          // generate HTML
           generateTestHTML(tests[currentTestIndex]);
           generateSummaryHTML(testSummaries[currentTestIndex]);
-
-          // binding radio button event
+   
           $questions = document.querySelectorAll('.question-content form');
           $questions.forEach($question => {
-            $question.querySelector('.govuk-radios').addEventListener('change', function (e) {
-              handleOptionChange(e, $question);
+            $question.querySelector('.govuk-radios').addEventListener('change', function () {
+              $btnNext.disabled = false;
             });
           });
 
@@ -71,27 +69,6 @@
     $questionContent.innerHTML = 'No test';
   }
 
-  function handleOptionChange(e, $question) {
-    let value = e.target.value;
-    let type = e.target.dataset.option;
-    let $elements = $question.querySelectorAll(`.govuk-radios input[data-option="${type}"]`);
-    if ($elements) {
-      $elements.forEach(($element, index) => {
-        if (index.toString() === value) return;
-        $element.checked = false;
-      });
-    }
-
-    $btnNext.disabled = !isValidRadios();
-  }
-
-  function isValidRadios() {
-    let $currentQuestion = $questions[currentQuestionIndex];
-    let $most = $currentQuestion.querySelector('.govuk-radios input[data-option=most]:checked');
-    let $least = $currentQuestion.querySelector('.govuk-radios input[data-option=least]:checked');
-    return $most && $least;
-  }
-
   function setCountdown(minutes) {
     let countdownDate = new Date(new Date().getTime() + minutes * 60000);
     let now = new Date().getTime();
@@ -99,13 +76,12 @@
     $timeRemaining.innerHTML = getDiffTimeString(diff);
 
     // update the count down every 1 second
-    let timer = setInterval(function() {
-      // get today's date and time
+    let timer = setInterval(function() {      // get today's date and time
       let now = new Date().getTime();
       // find the difference between now and the count down date
       let diff = countdownDate - now;
       $timeRemaining.innerHTML = getDiffTimeString(diff);
-
+      
       // timer will go red in the last 1 minute
       if (diff <= 60000) {
         document.querySelector('.countdown').style.backgroundColor = 'red';
@@ -128,52 +104,33 @@
       let optionsHtml = '';
       question.options.forEach((option, optionIndex) => {
         optionsHtml += `
-          <div>
-            <h3 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">
-              ${option.answer}
-            </h3>
-            <p>
-              <div class="govuk-radios__item-container">
-                <div class="govuk-radios__item">
-                  <input
-                    id="question-${questionIndex}-option-${optionIndex}-most"
-                    name="question-${questionIndex}-option-${optionIndex}"
-                    type="radio"
-                    class="govuk-radios__input info-radio----4"
-                    value="${optionIndex}"
-                    data-option="most"
-                  >
-                    <label for="question-${questionIndex}-option-${optionIndex}-most" class="govuk-label govuk-radios__label">Most appropriate</label>
-                </div>
-              </div><br>
-              <div class="govuk-radios__item-container">
-                <div class="govuk-radios__item">
-                  <input
-                    id="question-${questionIndex}-option-${optionIndex}-least"
-                    name="question-${questionIndex}-option-${optionIndex}"
-                    type="radio"
-                    class="govuk-radios__input info-radio----4"
-                    value="${optionIndex}"
-                    data-option="least"
-                  >
-                    <label for="question-${questionIndex}-option-${optionIndex}-least" class="govuk-label govuk-radios__label">Least appropriate</label>
-                </div>
+          <p>
+            <div class="govuk-radios__item-container">
+              <div class="govuk-radios__item">
+                <input
+                  id="question-${questionIndex}-radio-${optionIndex}"
+                  name="question-${questionIndex}"
+                  type="radio"
+                  class="govuk-radios__input"
+                  value="${optionIndex}"
+                >
+                  <label for="question-${questionIndex}-radio-${optionIndex}" class="govuk-label govuk-radios__label">${option.answer}</label>
               </div>
-            </p>
-          </div>
+            </div>
+          </p>
         `;
       });
 
       questionHtml += `
         <form>
           <fieldset class="govuk-fieldset">
-            <div id="situationalJudgementRadio" class="govuk-form-group">
-              <fieldset aria-describedby="situationalJudgementRadio__hint" class="govuk-fieldset">
+            <div id="criticalAnalysisRadio" class="govuk-form-group">
+              <fieldset aria-describedby="criticalAnalysisRadio__hint" class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-2"> 
                   ${questionIndex + 1}. ${question.details}
                 </legend>
-                <span id="situationalJudgementRadio__hint" class="govuk-hint">
-                  Please select which of the options below are 'most appropriate' and 'least appropriate'. You can only choose one answer as most appropriate and one answer as least appropriate.
+                <span id="criticalAnalysisRadio__hint" class="govuk-hint">
+                  Choose one option.
                 </span>
                 <div class="govuk-radios">
                   ${optionsHtml}
@@ -262,17 +219,17 @@
 
   function showQuestion(index) {
     if (isLastQuestion(index)) {
-      $btnListHint.style.display = 'none';
       $btnSkip.style.display = 'none';
-      $btnPrev.style.display = 'none';
+      $prevLink.style.display = 'none';
+      $nextLink.style.display = 'none';
       $btnNext.innerHTML = "Submit answers";
       $btnNext.disabled = false;
     } else {
       $questions[index].style.display = 'block';
-      $btnListHint.style.display = 'block';
       $btnSkip.style.display = 'inline';
       $btnNext.innerHTML = "Save and continue";
-      $btnPrev.style.display = (currentQuestionIndex === 0) ? 'none' : 'block';
+      $prevLink.style.display = (currentQuestionIndex === 0) ? 'none' : 'block';
+      $nextLink.style.display = (currentQuestionIndex === $questions.length - 1) ? 'none' : 'block';
 
       // disable next button when no input is checked
       let checked = $questions[currentQuestionIndex].querySelector('input:checked');
@@ -310,13 +267,9 @@
     let answers = [];
 
     for (let i = 0; i < $questions.length; i++) {
-      let $ansMost = $questions[i].querySelector('input[data-option="most"]:checked');
-      let $ansLeast = $questions[i].querySelector('input[data-option="least"]:checked');
-      if ($ansMost && $ansLeast) {
-        answers.push({
-          mostAppropriate: $ansMost.value,
-          leastAppropriate: $ansLeast.value
-        });
+      let $ans = $questions[i].querySelector('input:checked');
+      if ($ans) {
+        answers.push($ans.value);
       } else {
         answers.push(null);
       }
@@ -331,21 +284,16 @@
     questions.forEach((question, index) => {
       let answer = answers[index];
       if (!answer) return;
-      if (question.mostAppropriate.toString() === answer.mostAppropriate.toString()) {
-        count += 1;
-      }
-      if (question.leastAppropriate.toString() === answer.leastAppropriate.toString()) {
+      if (question.correct.toString() === answer.toString()) {
         count += 1;
       }
     });
 
-    return Math.round((count * 100) / (questions.length * 2));
+    return Math.round((count * 100) / questions.length);
   }
 
   function handleSkipClick(e) {
-    $questions[currentQuestionIndex].querySelectorAll('input').forEach($answer => {
-      $answer.checked = false;
-    });
+    e.preventDefault();
     nextPrevQuestion(1);
     e.currentTarget.blur();
   }
@@ -374,8 +322,9 @@
     let score = calculateScore(answers);
     window.location.href = `${endingPagePath}?score=${score}`;
   }
-  
-  $btnPrev.addEventListener('click', handlePrevClick);
+ 
+  $prevLink.addEventListener('click', handlePrevClick);
+  $nextLink.addEventListener('click', handleSkipClick);
   $btnSkip.addEventListener('click', handleSkipClick);
   $btnNext.addEventListener('click', handleNextClick);
   // modal buttons
