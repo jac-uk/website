@@ -2,7 +2,7 @@
   {
     "type": "situational-judgement",
     "introduction": "Practice qualifying test part 1 – Situational Judgement Questions",
-    "time": 10,
+    "time": 12.5,
     "questions": [
       {
         "details": "You are conducting a hearing. The witness who is giving evidence has a very strong regional accent, not local to the area where the hearing is taking place. You notice that others in the hearing room, including the parties, appear to be having some difficulty in understanding the evidence.",
@@ -119,7 +119,7 @@
   {
     "type": "critical-analysis",
     "introduction": "Practice qualifying test part 2 - Critical Analysis Questions",
-    "time": 10,
+    "time": 12.5,
     "questions": [
       {
         "details": "According to Lord Justice Laws, common law’s catholicity is under threat from…",
